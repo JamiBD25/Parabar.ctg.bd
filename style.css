@@ -5,12 +5,14 @@ header {
   align-items: center;
   padding: 20px;
   background-image: url('https://i.ibb.co/MDrmqFQ1/Untitled-6000-x-1000-px-6000-x-2500-px-6000-x-2000-px-20251007-235311-0000.png');
-  background-size: contain; /* মোবাইলে পুরো ছবি দেখাবে */
-  background-repeat: no-repeat;
+  background-size: cover; /* পুরো হেডার ঢেকে যাবে, অতিরিক্ত অংশ কেটে যাবে */
   background-position: center;
-  height: 250px;
+  background-repeat: no-repeat;
+  height: 250px; 
   position: relative;
   color: white;
+  overflow: hidden; /* অতিরিক্ত অংশ লুকানো */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* নেভিগেশন */
@@ -33,41 +35,51 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
-/* হ্যামবার্গার */
+/* হ্যামবার্গার (ত্রি-লাইন) */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 5px;
+  gap: 7px;
 }
 
 .hamburger div {
-  width: 25px;
-  height: 3px;
-  background-color: white;
+  width: 35px;   /* বড় করা */
+  height: 4px;   /* মোটা লাইন */
+  background-color: black; /* কালো রঙ */
+  border-radius: 2px;
 }
 
 /* ----------------- হিরো সেকশন ----------------- */
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background-color: #f8f8f8;
+  background-color: #e0f7fa; /* হালকা সুন্দর নীল-সবুজ ব্যাকগ্রাউন্ড */
+  position: relative;
+}
+
+.hero-text {
+  display: inline-block;
+  background-color: rgba(0, 128, 128, 0.7); /* অর্ধস্বচ্ছ ব্যাকগ্রাউন্ড */
+  padding: 30px 40px;
+  border-radius: 10px;
+  color: white;
+  animation: slideIn 1s ease-out;
 }
 
 .hero h1 {
   font-size: 2.5em;
-  color: #1f7a1f;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .hero p {
   font-size: 1.2em;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .hero .btn {
   padding: 12px 25px;
-  background-color: #1f7a1f;
+  background-color: #00695c;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -75,7 +87,13 @@ nav ul li a:hover {
 }
 
 .hero .btn:hover {
-  background-color: #145214;
+  background-color: #004d40;
+}
+
+/* হিরো টেক্সট slide-in animation */
+@keyframes slideIn {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 /* ----------------- ফুটার ----------------- */
@@ -111,5 +129,19 @@ footer {
     position: absolute;
     top: 20px;
     right: 20px;
+  }
+
+  .hero-text {
+    padding: 20px;
+    width: 90%;
+    font-size: 0.9em;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 1em;
   }
 }
