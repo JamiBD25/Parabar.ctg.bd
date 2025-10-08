@@ -1,44 +1,35 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>পারাবার সাহিত্য সংস্কৃতি সংসদ</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পারাবার সাহিত্য সংস্কৃতি সংসদ চট্টগ্রাম</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <img src="https://i.ibb.co.com/MDrmqFQ1/Untitled-6000-x-1000-px-6000-x-2500-px-6000-x-2000-px-20251007-235311-0000.png" 
+             alt="পারাবার সাহিত্য সংস্কৃতি সংসদ চট্টগ্রাম" class="header-img">
+        <nav class="navbar">
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="#">হোম</a></li>
+                <li><a href="#">পরিচিতি</a></li>
+                <li><a href="#">প্রকাশনা</a></li>
+                <li><a href="#">সদস্যবৃন্দ</a></li>
+                <li><a href="#">যোগাযোগ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Header -->
-  <header>
-    <div class="header-container">
-      <a href="index.html">
-        <img src="https://i.ibb.co/MDrmqFQ1/Untitled-6000-x-1000-px-6000-x-2500-px-6000-x-2000-px-20251007-235311-0000.png" alt="Parabar Logo" class="logo">
-      </a>
+    <section class="hero-text">
+        <h1>সাহিত্য ও সংস্কৃতির আলোয় গড়ে উঠুক মানবিক সমাজ</h1>
+    </section>
 
-      <div class="hamburger" id="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-
-    <nav id="nav-menu">
-      <ul>
-        <li><a href="index.html">হোম</a></li>
-        <li><a href="about.html">পরিচিতি</a></li>
-        <li><a href="publications.html">মৌলিক প্রকাশনা</a></li>
-        <li><a href="gallery.html">ছবিঘর</a></li>
-        <li><a href="committee.html">পরিচালনা পরিষদ</a></li>
-        <li><a href="presidents.html">সভাপতি</a></li>
-        <li><a href="contact.html">যোগাযোগ</a></li>
-        <li><a href="donation.html">ডোনেশন</a></li>
-      </ul>
-    </nav>
-  </header>
-  <footer>
-    <p>© ২০২৫ পারাবার সাহিত্য সংস্কৃতি সংসদ, চট্টগ্রাম</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
