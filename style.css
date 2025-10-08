@@ -1,173 +1,142 @@
-/* ----------------- হেডার ----------------- */
-header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 20px;
-  background-image: url('https://i.ibb.co/MDrmqFQ1/Untitled-6000-x-1000-px-6000-x-2500-px-6000-x-2000-px-20251007-235311-0000.png');
-  background-size: cover;
-  background-position: center center; /* ডেস্কটপে ব্যালান্স ঠিক থাকবে */
-  background-repeat: no-repeat;
-  height: 100px;
-  color: white;
-  position: relative;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  overflow: hidden;
-}
-
-/* ----------------- নেভিগেশন ----------------- */
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
+/* সাধারণ সেটআপ */
+body {
   margin: 0;
-  padding: 0;
+  font-family: "Noto Sans Bengali", sans-serif;
+  background-color: #ffffff;
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 12px;
-  transition: 0.3s;
+/* -------- Header -------- */
+header {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
 }
 
-nav ul li a:hover {
-  background-color: rgba(0,0,0,0.4);
-  border-radius: 5px;
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
-/* ----------------- হ্যামবার্গার ----------------- */
+.logo {
+  height: 70px;
+  width: auto;
+  display: block;
+}
+
+/* -------- হ্যামবার্গার -------- */
 .hamburger {
-  display: none;
+  display: flex;
   flex-direction: column;
-  gap: 6px;
+  justify-content: space-around;
+  width: 35px;
+  height: 30px;
   cursor: pointer;
-  z-index: 1001;
 }
 
 .hamburger div {
-  width: 35px;
+  width: 100%;
   height: 4px;
   background-color: black;
   border-radius: 2px;
 }
 
-/* ----------------- হিরো ----------------- */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #d1f4f8, #a7f0e4);
+/* -------- নেভবার -------- */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid #ddd;
+  z-index: 1000;
 }
 
-.hero-text {
-  background-color: rgba(0, 128, 128, 0.8);
-  padding: 30px 40px;
-  border-radius: 12px;
-  color: white;
-  display: inline-block;
-  animation: slideIn 1s ease-out;
+nav ul.show {
+  display: flex;
+  animation: slideIn 0.3s ease-out;
 }
 
-.hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-.btn {
-  background-color: #00695c;
-  padding: 12px 25px;
-  border-radius: 6px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background-color: #004d40;
-}
-
-/* হিরো টেক্সট animation */
 @keyframes slideIn {
-  from { transform: translateY(50px); opacity: 0; }
+  from { transform: translateY(-10px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* ----------------- ফুটার ----------------- */
+nav ul li {
+  width: 100%;
+}
+
+nav ul li a {
+  display: block;
+  padding: 15px 25px;
+  text-decoration: none;
+  color: #003366;
+  font-weight: 600;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+nav ul li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* -------- Hero -------- */
+.hero {
+  background: linear-gradient(to bottom, #005f73, #0a9396);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.hero p {
+  font-size: 1.1em;
+}
+
+/* -------- Footer -------- */
 footer {
+  background-color: #003d33;
+  color: white;
   text-align: center;
   padding: 15px;
-  background-color: #1f7a1f;
-  color: white;
   font-size: 0.9em;
 }
 
-/* ----------------- মোবাইল ----------------- */
-@media (max-width: 768px) {
-  header {
-    justify-content: space-between;
-    height: 200px;
-  }
-
-  .hamburger {
-    display: flex;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
+/* -------- ডেস্কটপ -------- */
+@media (min-width: 769px) {
+  .hamburger { display: none; }
 
   nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 200px;
-    right: 0;
-    width: 100%; /* এখন আর কাটা যাবে না */
-    height: auto;
-    padding: 20px;
-    display: none;
-    z-index: 1000;
-    animation: slideMenu 0.3s ease-out;
-  }
-
-  nav ul.show {
     display: flex;
-  }
-
-  @keyframes slideMenu {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-
-  nav ul li {
-    margin-bottom: 10px;
+    position: static;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: transparent;
+    border: none;
   }
 
   nav ul li a {
-    font-size: 1.1em;
-    color: white;
+    color: #003366;
+    padding: 10px 15px;
   }
 
-  .hero {
-    padding: 70px 15px;
+  nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
-  .hero h1 {
-    font-size: 2em;
-  }
-
-  .hero p {
-    font-size: 1em;
-  }
-
-  .hero-text {
-    width: 90%;
+  header {
+    height: auto;
   }
 }
