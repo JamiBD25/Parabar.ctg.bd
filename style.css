@@ -15,6 +15,44 @@ header {
   top: 0;
   z-index: 1000;
 }
+.parabar-headline-box {
+    background: linear-gradient(90deg, #ffcc00, #ff8800);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.parabar-headline {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    display: inline-block;
+}
+
+.static-text {
+    margin: 0 5px;
+}
+
+.typing-text {
+    border-right: 3px solid #222;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 0;
+    animation: typing 2s steps(20) forwards, blink 0.6s infinite;
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100px; }
+}
+
+@keyframes blink {
+    0% { border-color: transparent; }
+    50% { border-color: #222; }
+    100% { border-color: transparent; }
+}
 
 .header-container {
   display: flex;
