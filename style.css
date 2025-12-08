@@ -196,3 +196,12 @@ nav ul li a:hover {
     border-radius: 6px;
   }
 }
+/* -------- ফন্ট  -------- */
+@font-face {
+    font-family: 'SutonnyMJ';
+    src: url('Font/SutonnyMJ.ttf') format('truetype');
+}
+
+body {
+    font-family: 'SutonnyMJ', sans-serif;
+}
