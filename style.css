@@ -196,12 +196,11 @@ nav ul li a:hover {
     border-radius: 6px;
   }
 }
-/* -------- ফন্ট  -------- */
-@font-face {
-    font-family: 'SutonnyMJ';
-    src: url('Font/SutonnyMJ.ttf') format('truetype');
+body {
+    font-family: 'SolaimanLipi', sans-serif;
 }
 
-body {
-    font-family: 'SutonnyMJ', sans-serif;
+/* Or for a specific container */
+.container {
+    font-family: 'SolaimanLipi', sans-serif;
 }
