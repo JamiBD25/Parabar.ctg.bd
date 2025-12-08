@@ -15,43 +15,45 @@ header {
   top: 0;
   z-index: 1000;
 }
+
+/* ব্যাকগ্রাউন্ড গ্রেডিয়েন্ট হেডলাইন বক্স */
 .parabar-headline-box {
-    background: linear-gradient(90deg, #ffcc00, #ff8800);
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: 10px;
+  background: linear-gradient(90deg, #ffcc00, #ff8800);
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 10px;
 }
 
 .parabar-headline {
-    font-size: 32px;
-    font-weight: 700;
-    color: #222;
-    display: inline-block;
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+  display: inline-block;
 }
 
 .static-text {
-    margin: 0 5px;
+  margin: 0 5px;
 }
 
 .typing-text {
-    border-right: 3px solid #222;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    width: 0;
-    animation: typing 2s steps(20) forwards, blink 0.6s infinite;
+  border-right: 3px solid #222;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: 0;
+  animation: typing 2s steps(20) forwards, blink 0.6s infinite;
 }
 
 /* Typing Animation */
 @keyframes typing {
-    from { width: 0; }
-    to { width: 100px; }
+  from { width: 0; }
+  to { width: 100px; }
 }
 
 @keyframes blink {
-    0% { border-color: transparent; }
-    50% { border-color: #222; }
-    100% { border-color: transparent; }
+  0% { border-color: transparent; }
+  50% { border-color: #222; }
+  100% { border-color: transparent; }
 }
 
 .header-container {
@@ -60,12 +62,12 @@ header {
   align-items: center;
   max-width: 1200px;
   margin: auto;
-  padding: 8px 30px; /* হেডার compact করা হয়েছে */
+  padding: 8px 30px;
 }
 
 /* -------- Logo -------- */
 .logo {
-  height: 50px; /* আগের 65px থেকে কমিয়ে compact look */
+  height: 50px;
   width: auto;
   display: block;
 }
@@ -110,14 +112,15 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: #ffffff;  /* সাদা ব্যাকগ্রাউন্ড */
   position: absolute;
-  top: 70px; /* হেডার compact হলে উপরের فاصله adjust */
+  top: 70px;
   left: 0;
   width: 100%;
   display: none;
   flex-direction: column;
   border-top: 1px solid #ddd;
+  text-align: center; /* সব লেখা center */
 }
 
 nav ul.show {
@@ -148,18 +151,19 @@ nav ul.show li:nth-child(8) { animation-delay: 0.8s; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* মোবাইল মেনু টেক্সট */
 nav ul li a {
   display: block;
-  padding: 12px 20px; /* spacing একটু কমানো হয়েছে */
+  padding: 14px 20px;
   text-decoration: none;
-  color: #003366;
+  color: #000000;   /* টেক্সট কালো */
   font-weight: 600;
-  font-size: 14px; /* আগের 15px থেকে কমানো */
+  font-size: 14px;
   transition: background-color 0.2s;
 }
 
 nav ul li a:hover {
-  background-color: #f0f0f0;
+  background-color: #f7f7f7;
 }
 
 /* -------- Desktop View -------- */
@@ -167,40 +171,39 @@ nav ul li a:hover {
   .hamburger { display: none; }
 
   .header-container {
-    padding: 10px 50px; /* ডেস্কটপে compact কিন্তু spacious look */
+    padding: 10px 50px;
   }
 
   nav ul {
     display: flex !important;
     position: static;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center; /* ডেস্কটপে middle-center */
     align-items: center;
     background-color: transparent;
     border: none;
-    gap: 20px; /* spacing সামঞ্জস্য */
+    gap: 20px;
+  }
+
+  nav ul li {
+    text-align: center;
   }
 
   nav ul li a {
-    color: #003366;
-    font-size: 13px; /* desktop look clean */
+    color: #000; /* desktop text black */
+    font-size: 14px;
     font-weight: 500;
-    padding: 8px 0;
-    letter-spacing: 0.3px;
-    transition: color 0.2s, background-color 0.2s;
+    padding: 10px 12px;
+    transition: 0.2s;
   }
 
   nav ul li a:hover {
-    color: #000;
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(0,0,0,0.07);
     border-radius: 6px;
   }
 }
-body {
-    font-family: 'SolaimanLipi', sans-serif;
-}
 
-/* Or for a specific container */
-.container {
-    font-family: 'SolaimanLipi', sans-serif;
+/* SolaimanLipi সব জায়গায় */
+body, .container {
+  font-family: 'SolaimanLipi', sans-serif;
 }
