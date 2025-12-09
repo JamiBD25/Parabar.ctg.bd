@@ -205,3 +205,21 @@ body {
 .container {
     font-family: 'SolaimanLipi', sans-serif;
 }
+/* Mobile menu background fix */
+@media (max-width: 768px) {
+    nav ul {
+        background-color: #ffffff !important; /* পুরো মেনুর ব্যাকগ্রাউন্ড সাদা */
+        padding: 10px 0;
+    }
+
+    nav ul li a {
+        background-color: #ffffff !important; /* প্রতিটা অপশনের পিছনে সাদা */
+        color: #003366 !important;            /* ← আগের টেক্সট কালার */
+        border-bottom: 1px solid #e5e5e5;     /* নিচে হালকা লাইন */
+    }
+
+    nav ul li a:hover {
+        background-color: #f2f2f2 !important;
+        color: #003366 !important;            /* hover-এও আগের টেক্সট কালার */
+    }
+}
