@@ -1,4 +1,4 @@
-/* -------- সাধারণ সেটআপ -------- */
+/* /* -------- সাধারণ সেটআপ -------- */
 body {
     margin: 0;
     font-family: "Noto Sans Bengali", sans-serif;
@@ -250,5 +250,242 @@ body {
 
     nav ul li a:hover {
         background-color: #ffffff !important;
+    }
+} */
+
+/* নতুন কোড*/
+/* -------- সাধারণ সেটআপ -------- */
+body {
+    margin: 0;
+    font-family: "SolaimanLipi", sans-serif; /* সব জায়গায় সুতন্বি ফন্ট */
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* -------- Header -------- */
+header {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.parabar-headline-box {
+    background: linear-gradient(90deg, #ffcc00, #ff8800);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.parabar-headline {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    display: inline-block;
+}
+
+.static-text {
+    margin: 0 5px;
+}
+
+.typing-text {
+    border-right: 3px solid #222;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 0;
+    animation: typing 2s steps(20) forwards, blink 0.6s infinite;
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100px; }
+}
+
+@keyframes blink {
+    0% { border-color: transparent; }
+    50% { border-color: #222; }
+    100% { border-color: transparent; }
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 8px 30px;
+}
+
+/* -------- Logo -------- */
+.logo {
+    height: 50px; /* compact look */
+    width: auto;
+    display: block;
+}
+
+/* -------- Hamburger -------- */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 35px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1100;
+    background-color: #ffffff;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.hamburger div {
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    border-radius: 2px;
+    transition: 0.3s;
+    transform-origin: 4px;
+}
+
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* -------- Nav Menu -------- */
+nav {
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    border-top: 1px solid #ddd;
+}
+
+nav ul.show {
+    display: flex;
+    animation: fadeSlide 0.5s ease forwards;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav ul.show li {
+    opacity: 0;
+    animation: fadeInItem 0.5s ease forwards;
+}
+
+nav ul.show li:nth-child(1) { animation-delay: 0.1s; }
+nav ul.show li:nth-child(2) { animation-delay: 0.2s; }
+nav ul.show li:nth-child(3) { animation-delay: 0.3s; }
+nav ul.show li:nth-child(4) { animation-delay: 0.4s; }
+nav ul.show li:nth-child(5) { animation-delay: 0.5s; }
+nav ul.show li:nth-child(6) { animation-delay: 0.6s; }
+nav ul.show li:nth-child(7) { animation-delay: 0.7s; }
+nav ul.show li:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes fadeInItem {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #003366;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* -------- Desktop View -------- */
+@media (min-width: 769px) {
+    .hamburger { display: none; }
+
+    .header-container {
+        padding: 10px 50px;
+    }
+
+    nav ul {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        gap: 20px;
+    }
+
+    nav ul li a {
+        color: #003366;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 8px 0;
+        letter-spacing: 0.3px;
+        transition: color 0.2s, background-color 0.2s;
+        border-radius: 0;
+    }
+
+    nav ul li a:hover {
+        color: #000;
+        background-color: rgba(0,0,0,0.05);
+        border-radius: 6px;
+    }
+}
+
+/* -------- Mobile View -------- */
+@media (max-width: 768px) {
+    nav ul {
+        background-color: #ffffff !important; /* পুরো মেনু সাদা */
+        flex-direction: column;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 0;
+    }
+
+    nav ul li a {
+        display: block;
+        width: calc(100% - 20px);
+        padding: 10px 15px;
+        margin: 5px 10px;
+        background-color: #ffffff !important; /* প্রতিটা অপশন সাদা */
+        color: #003366 !important;
+        text-align: center;
+        border-radius: 6px;
+        border: 1px solid #e5e5e5;
+    }
+
+    nav ul li a:hover {
+        background-color: #f2f2f2 !important;
+        color: #003366 !important;
     }
 }
