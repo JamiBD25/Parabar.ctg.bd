@@ -45,6 +45,113 @@
     </h3>
 </div>
 <script src="script.js"></script>
+
+<!-- -------- মেম্বার কার্ড-------- -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>কমিটি</title>
+    
+    <!-- মূল ফন্ট -->
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+    <!-- পদবি ফন্ট -->
+    <link href="https://fonts.maateen.me/siamrupali/font.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f7f7f7;
+            font-family: "SolaimanLipi", sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .committee-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 20px;
+        }
+
+        .member-card {
+            flex: 1 1 250px;
+            max-width: 300px;
+            text-align: center;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+
+        .member-card img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        .member-card .designation {
+            font-family: "SiyamRupali", sans-serif; /* পদবির ভিন্ন ফন্ট */
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .member-card p {
+            margin: 4px 0 0;
+            font-size: 18px;
+        }
+
+        /* চেয়ারম্যান কার্ডকে উপরে তুলুন */
+        .member-card.chairman {
+            margin-top: -30px; 
+        }
+
+        /* মোবাইলের জন্য */
+        @media screen and (max-width: 768px) {
+            .committee-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .member-card.chairman {
+                margin-top: 0; /* মোবাইলে সব একই লেভেল */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center; font-size:28px; margin-bottom:30px;">কমিটি</h1>
+
+    <div class="committee-container">
+        <!-- পরিচালক -->
+        <div class="member-card">
+            <img src="https://i.ibb.co/GvrbcMGK/FB-IMG-1765264660739.jpg" alt="পরিচালক ইরফান মাহমুদ">
+            <h3 class="designation">পরিচালক</h3>
+            <p>ইরফান মাহমুদ</p>
+        </div>
+
+        <!-- ভারপ্রাপ্ত চেয়ারম্যান -->
+        <div class="member-card chairman">
+            <img src="https://i.ibb.co/8L56Dcgg/FB-IMG-1765265535641.jpg" alt="ভারপ্রাপ্ত চেয়ারম্যান মাইমুনুল ইসলাম মামুন">
+            <h3 class="designation">ভারপ্রাপ্ত চেয়ারম্যান</h3>
+            <p>মাইমুনুল ইসলাম মামুন</p>
+        </div>
+
+        <!-- সহকারী পরিচালক -->
+        <div class="member-card">
+            <img src="https://i.ibb.co/DPH5Xgc9/FB-IMG-1765264683371.jpg" alt="সহকারী পরিচালক মিনহাজুল আবেদীন">
+            <h3 class="designation">সহকারী পরিচালক</h3>
+            <p>মিনহাজুল আবেদীন</p>
+        </div>
+    </div>
+
+</ body>
+
+
+
 <!-- -------- Footer Start -------- -->
 <footer style="
     background:#111;
