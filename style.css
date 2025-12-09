@@ -223,3 +223,8 @@ body {
         color: #003366 !important;            /* hover-এও আগের টেক্সট কালার */
     }
 }
+.hamburger {
+    background-color: #ffffff; /* সাদা ব্যাকগ্রাউন্ড */
+    padding: 6px;              /* একটু স্পেস যেন সুন্দর দেখায় */
+    border-radius: 8px;        /* হালকা গোল আকৃতি */
+}
