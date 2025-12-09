@@ -228,3 +228,27 @@ body {
     padding: 6px;              /* একটু স্পেস যেন সুন্দর দেখায় */
     border-radius: 8px;        /* হালকা গোল আকৃতি */
 }
+@media (max-width: 768px) {
+
+    nav ul {
+        background-color: transparent !important; /* পুরো মেনু transparent */
+    }
+
+    nav ul li {
+        width: auto; /* আইটেম যতটুকু লেখা ততটুকু */
+    }
+
+    nav ul li a {
+        background-color: #ffffff !important; /* শুধু হোম/অপশন ব্যাকগ্রাউন্ড সাদা */
+        display: inline-block;  /* লেখা অনুযায়ী ব্যাকগ্রাউন্ড */
+        padding: 10px 15px;
+        border-radius: 6px;
+        margin: 5px 10px;
+        border: 1px solid #e5e5e5;
+        color: #003366 !important;
+    }
+
+    nav ul li a:hover {
+        background-color: #f2f2f2 !important;
+    }
+}
