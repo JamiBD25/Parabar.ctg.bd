@@ -2,171 +2,233 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-<!-- Essential for correct character display -->
-    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
-    <!-- Alternative link from the GitHub repo: -->
-    <!-- <link href='http://mdminhazulhaque.github.io/solaimanlipi/css/solaimanlipi.css' rel='stylesheet' type='text/css'> -->
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>পারাবার সাহিত্য সংস্কৃতি সংসদ</title>
+
+  <!-- মূল ফন্ট -->
+  <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+  <!-- পদবি ফন্ট (BenSenHandwriting) -->
+  <style>
+    @font-face {
+      font-family: "BenSenHandwriting";
+      src: url("fonts/BenSenHandwriting.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background: #f7f7f7;
+      font-family: "SolaimanLipi", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 10px 20px;
+    }
+
+    .header-container .logo {
+      height: 60px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    /* Hamburger (mobile) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: #333;
+    }
+
+    /* Headline */
+    .parabar-headline-box {
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .parabar-headline {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    /* -------- কমিটি কার্ড -------- */
+    .committee-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 20px;
+    }
+
+    .member-card {
+      flex: 1 1 250px;
+      max-width: 300px;
+      text-align: center;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+
+    .member-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .member-card .designation {
+      font-family: "BenSenHandwriting", cursive;
+      font-size: 22px;
+      font-weight: normal;
+      color: #2c3e50;
+      margin-bottom: 4px;
+    }
+
+    .member-card p {
+      margin: 4px 0 0;
+      font-size: 18px;
+    }
+
+    /* চেয়ারম্যান উপরে */
+    .member-card.chairman {
+      margin-top: -30px;
+    }
+
+    /* মোবাইলের জন্য */
+    @media screen and (max-width: 768px) {
+      .committee-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .member-card.chairman {
+        margin-top: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background:#111;
+      color:#eee;
+      text-align:center;
+      padding:18px 10px;
+      font-size:16px;
+      margin-top:40px;
+      font-family:'SolaimanLipi', sans-serif;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- -------- Header Start -------- -->
+  <!-- Header -->
   <header>
     <div class="header-container">
       <img src="https://i.ibb.co/MDrmqFQ1/Untitled-6000-x-1000-px-6000-x-2500-px-6000-x-2000-px-20251007-235311-0000.png" 
            alt="Parabar Logo" class="logo">
-<nav id="nav-menu">
-  <ul>
-    <li><a href="index.html">হোম</a></li>
-    <li><a href="about.html">পরিচিতি</a></li>
-    <li><a href="publications.html">মৌলিক প্রকাশনা</a></li>
-    <li><a href="gallery.html">ছবিঘর</a></li>
-    <li><a href="committee.html">পরিচারনা পর্ষদ</a></li>
-    <li><a href="presidents.html">সাবেক সভাপতিবৃন্দ</a></li>
-    <li><a href="contact.html">যোগাযোগ</a></li>
-    <li><a href="donation.html">ডোনেশন</a></li>
-  </ul>
-</nav>     <div class="hamburger" id="hamburger">
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html">হোম</a></li>
+          <li><a href="about.html">পরিচিতি</a></li>
+          <li><a href="publications.html">মৌলিক প্রকাশনা</a></li>
+          <li><a href="gallery.html">ছবিঘর</a></li>
+          <li><a href="committee.html">পরিচারনা পর্ষদ</a></li>
+          <li><a href="presidents.html">সাবেক সভাপতিবৃন্দ</a></li>
+          <li><a href="contact.html">যোগাযোগ</a></li>
+          <li><a href="donation.html">ডোনেশন</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger">
         <div></div>
         <div></div>
         <div></div>
       </div>
     </div>
   </header>
-  <!-- -------- Header End -------- -->
-<div class="parabar-headline-box">
-    <h3 class="parabar-headline">
-        
-        <span class="typing-text">পরিচালনা</span>
-  <span class="typing-text">পরিষদ</span
-        
-    </h3>
-</div>
-<script src="script.js"></script>
 
-<!-- -------- মেম্বার কার্ড-------- -->
+  <!-- Headline -->
+  <div class="parabar-headline-box">
+    <h3 class="parabar-headline">পরিচালনা পরিষদ</h3>
+  </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>কমিটি</title>
-    
-    <!-- মূল ফন্ট -->
-    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
-    <!-- পদবি ফন্ট -->
-    <link href="https://fonts.maateen.me/siamrupali/font.css" rel="stylesheet">
+  <!-- Committee Cards -->
+  <h1 style="text-align:center; font-size:28px; margin-bottom:30px;">কমিটি</h1>
 
-    <style>
-        body {
-            background: #f7f7f7;
-            font-family: "SolaimanLipi", sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .committee-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin: 40px 20px;
-        }
-
-        .member-card {
-            flex: 1 1 250px;
-            max-width: 300px;
-            text-align: center;
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s;
-        }
-
-        .member-card img {
-            width: 100%;
-            border-radius: 12px;
-            margin-bottom: 10px;
-        }
-
-        .member-card .designation {
-            font-family: "SiyamRupali", sans-serif; /* পদবির ভিন্ন ফন্ট */
-            font-size: 22px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 4px;
-        }
-
-        .member-card p {
-            margin: 4px 0 0;
-            font-size: 18px;
-        }
-
-        /* চেয়ারম্যান কার্ডকে উপরে তুলুন */
-        .member-card.chairman {
-            margin-top: -30px; 
-        }
-
-        /* মোবাইলের জন্য */
-        @media screen and (max-width: 768px) {
-            .committee-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .member-card.chairman {
-                margin-top: 0; /* মোবাইলে সব একই লেভেল */
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <h1 style="text-align:center; font-size:28px; margin-bottom:30px;">কমিটি</h1>
-
-    <div class="committee-container">
-        <!-- পরিচালক -->
-        <div class="member-card">
-            <img src="https://i.ibb.co/GvrbcMGK/FB-IMG-1765264660739.jpg" alt="পরিচালক ইরফান মাহমুদ">
-            <h3 class="designation">পরিচালক</h3>
-            <p>ইরফান মাহমুদ</p>
-        </div>
-
-        <!-- ভারপ্রাপ্ত চেয়ারম্যান -->
-        <div class="member-card chairman">
-            <img src="https://i.ibb.co/8L56Dcgg/FB-IMG-1765265535641.jpg" alt="ভারপ্রাপ্ত চেয়ারম্যান মাইমুনুল ইসলাম মামুন">
-            <h3 class="designation">ভারপ্রাপ্ত চেয়ারম্যান</h3>
-            <p>মাইমুনুল ইসলাম মামুন</p>
-        </div>
-
-        <!-- সহকারী পরিচালক -->
-        <div class="member-card">
-            <img src="https://i.ibb.co/DPH5Xgc9/FB-IMG-1765264683371.jpg" alt="সহকারী পরিচালক মিনহাজুল আবেদীন">
-            <h3 class="designation">সহকারী পরিচালক</h3>
-            <p>মিনহাজুল আবেদীন</p>
-        </div>
+  <div class="committee-container">
+    <!-- পরিচালক -->
+    <div class="member-card">
+      <img src="https://i.ibb.co/GvrbcMGK/FB-IMG-1765264660739.jpg" alt="পরিচালক ইরফান মাহমুদ">
+      <h3 class="designation">পরিচালক</h3>
+      <p>ইরফান মাহমুদ</p>
     </div>
 
-</ body>
+    <!-- ভারপ্রাপ্ত চেয়ারম্যান -->
+    <div class="member-card chairman">
+      <img src="https://i.ibb.co/8L56Dcgg/FB-IMG-1765265535641.jpg" alt="ভারপ্রাপ্ত চেয়ারম্যান মাইমুনুল ইসলাম মামুন">
+      <h3 class="designation">ভারপ্রাপ্ত চেয়ারম্যান</h3>
+      <p>মাইমুনুল ইসলাম মামুন</p>
+    </div>
 
+    <!-- সহকারী পরিচালক -->
+    <div class="member-card">
+      <img src="https://i.ibb.co/DPH5Xgc9/FB-IMG-1765264683371.jpg" alt="সহকারী পরিচালক মিনহাজুল আবেদীন">
+      <h3 class="designation">সহকারী পরিচালক</h3>
+      <p>মিনহাজুল আবেদীন</p>
+    </div>
+  </div>
 
-
-<!-- -------- Footer Start -------- -->
-<footer style="
-    background:#111;
-    color:#eee;
-    text-align:center;
-    padding:18px 10px;
-    font-size:16px;
-    margin-top:40px;
-    font-family:'SolaimanLipi', sans-serif;
-">
-
+  <!-- Footer -->
+  <footer>
     <p style="margin:5px 0;">Developer: <strong>Nafis Mohammed Jami</strong></p>
     <p style="margin:5px 0;">All Rights Reserved © Parabar ID Department</p>
-</footer>
-<!-- -------- Footer End -------- -->
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
