@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <h2>Admin Dashboard</h2>
 
+  <h3>Add Fee</h3>
+  <input type="text" id="studentName" placeholder="Student Name"><br><br>
+  <input type="text" id="studentId" placeholder="Student ID"><br><br>
+  <input type="text" id="month" placeholder="Month"><br><br>
+  <input type="number" id="amount" placeholder="Amount"><br><br>
+  <button id="addFeeBtn">Add Fee</button>
+
+  <h3>All Fees</h3>
+  <ul id="feeList"></ul>
+
+  <button id="logoutBtn">Logout</button>
+
+  <script type="module">
+    import { auth, db } from './firebase.js';
+    import { signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    const addFeeBtn = document.getElementById('addFeeBtn');
+    const feeList = document.getElementById('feeList');
+
+    // Add Fee
+    addFeeBtn.addEventListener('click', async () => {
+      const name = document.getElementById('studentName').value;
+      const studentId = document.getElementById('studentId').value;
+      const month = document.getElementById('month').value;
+      const amount = Number(document.getElementById('amount').value);
+
+      try {
+        await addDoc(collection(db, "fees"), {
+          name, studentId, month, amount
+        });
+        alert("Fee added successfully!");
+        location.reload(); // simple way to refresh list
+      } catch(error) {
+        alert(error.message);
+      }
+    });
+
+    // Show all fees
+    async function loadFees() {
+      const querySnapshot = await getDocs(collection(db, "fees"));
+      feeList.innerHTML = "";
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const li = document.createElement('li');
+        li.textContent = `${data.name} (${data.studentId}) - ${data.month} : ${data.amount}`;
+        feeList.appendChild(li);
+      });
+    }
+
+    loadFees();
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await signOut(auth);
+      window.location.href = "index.html";
+    });
+
+  </script>
+</body>
+</html>
