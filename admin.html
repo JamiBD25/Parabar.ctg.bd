@@ -8,7 +8,7 @@
 
   <h3>Add Fee</h3>
   <input type="text" id="studentName" placeholder="Student Name"><br><br>
-  <input type="text" id="Id" placeholder="ID"><br><br>
+  <input type="text" id="Id" placeholder="Student UID"><br><br>
   <input type="text" id="month" placeholder="Month"><br><br>
   <input type="number" id="amount" placeholder="Amount"><br><br>
   <button id="addFeeBtn">Add Fee</button>
@@ -26,32 +26,38 @@
     const addFeeBtn = document.getElementById('addFeeBtn');
     const feeList = document.getElementById('feeList');
 
-    // Add Fee
+    // Add Fee Button Click
     addFeeBtn.addEventListener('click', async () => {
-      const name = document.getElementById('studentName').value;
-      const studentId = document.getElementById('Id).value;
-      const month = document.getElementById('month').value;
+      const name = document.getElementById('studentName').value.trim();
+      const Id = document.getElementById('Id').value.trim();
+      const month = document.getElementById('month').value.trim();
       const amount = Number(document.getElementById('amount').value);
 
+      if(!name || !Id || !month || !amount){
+        alert("All fields are required!");
+        return;
+      }
+
+      // Debug alert
+      alert("Button Clicked!\nName: " + name + "\nId: " + Id + "\nMonth: " + month + "\nAmount: " + amount);
+
       try {
-        await addDoc(collection(db, "fees"), {
-          name, studentId, month, amount
-        });
+        await addDoc(collection(db, "fees"), { name, Id, month, amount });
         alert("Fee added successfully!");
-        location.reload(); // simple way to refresh list
+        location.reload();
       } catch(error) {
         alert(error.message);
       }
     });
 
-    // Show all fees
+    // Show All Fees
     async function loadFees() {
       const querySnapshot = await getDocs(collection(db, "fees"));
       feeList.innerHTML = "";
       querySnapshot.forEach((doc) => {
         const data = doc.data();
         const li = document.createElement('li');
-        li.textContent = `${data.name} (${data.studentId}) - ${data.month} : ${data.amount}`;
+        li.textContent = `${data.name} (${data.Id}) - ${data.month} : ${data.amount}`;
         feeList.appendChild(li);
       });
     }
@@ -65,9 +71,5 @@
     });
 
   </script>
-<script type="module">
-  import { auth, db } from './firebase.js';
-  import { addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-</script>
 </body>
 </html>
