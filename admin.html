@@ -8,7 +8,7 @@
 
   <h3>Add Fee</h3>
   <input type="text" id="studentName" placeholder="Student Name"><br><br>
-  <input type="text" id="studentId" placeholder="Student ID"><br><br>
+  <input type="text" id="Id" placeholder="Student ID"><br><br>
   <input type="text" id="month" placeholder="Month"><br><br>
   <input type="number" id="amount" placeholder="Amount"><br><br>
   <button id="addFeeBtn">Add Fee</button>
@@ -29,7 +29,7 @@
     // Add Fee
     addFeeBtn.addEventListener('click', async () => {
       const name = document.getElementById('studentName').value;
-      const studentId = document.getElementById('studentId').value;
+      const studentId = document.getElementById('Id).value;
       const month = document.getElementById('month').value;
       const amount = Number(document.getElementById('amount').value);
 
