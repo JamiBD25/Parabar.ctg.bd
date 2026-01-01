@@ -8,7 +8,7 @@
 
   <h3>Add Fee</h3>
   <input type="text" id="studentName" placeholder="Student Name"><br><br>
-  <input type="text" id="Id" placeholder="Student ID"><br><br>
+  <input type="text" id="Id" placeholder="ID"><br><br>
   <input type="text" id="month" placeholder="Month"><br><br>
   <input type="number" id="amount" placeholder="Amount"><br><br>
   <button id="addFeeBtn">Add Fee</button>
@@ -65,5 +65,9 @@
     });
 
   </script>
+<script type="module">
+  import { auth, db } from './firebase.js';
+  import { addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+</script>
 </body>
 </html>
