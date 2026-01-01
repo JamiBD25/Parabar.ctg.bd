@@ -1,1 +1,48 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Dashboard</title>
+</head>
+<body>
+  <h2>Student Dashboard</h2>
+
+  <h3>Your Fees</h3>
+  <ul id="feeList"></ul>
+
+  <button id="logoutBtn">Logout</button>
+
+  <script type="module">
+    import { auth, db } from './firebase.js';
+    import { signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import { collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    const feeList = document.getElementById('feeList');
+
+    async function loadFees() {
+      const user = auth.currentUser;
+      if(!user) return;
+
+      // Filter by student UID
+      const q = query(collection(db, "fees"), where("studentId", "==", user.uid));
+      const querySnapshot = await getDocs(q);
+      feeList.innerHTML = "";
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const li = document.createElement('li');
+        li.textContent = `${data.month} : ${data.amount}`;
+        feeList.appendChild(li);
+      });
+    }
+
+    // Run after page load
+    auth.onAuthStateChanged(() => loadFees());
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await signOut(auth);
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
