@@ -20,6 +20,21 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
 
   <script>
+  function loadFees() {
+    db.collection("fees").onSnapshot(snapshot => {
+      const list = document.getElementById("feeList");
+      list.innerHTML = "";
+
+      snapshot.forEach(doc => {
+        const d = doc.data();
+        const li = document.createElement("li");
+        li.innerText = `${d.name} (${d.Id}) - ${d.month} : ${d.amount}`;
+        list.appendChild(li);
+      });
+    });
+  }
+
+  loadFees();
     // Firebase config (তোমার দেওয়া)
     const firebaseConfig = {
       apiKey: "AIzaSyAzsAlg4MYpRODqZhdxjYlCCX16dq1b-uw",
