@@ -503,3 +503,28 @@ footer {
         height: 200px;
     }
 }
+ 
+/* index er Batton option  */
+.home-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.home-buttons a {
+  background: linear-gradient(45deg, #ffcc00, #ff8800);
+  color: white;
+  padding: 12px 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.home-buttons a:hover {
+  background: linear-gradient(45deg, #ff8800, #ffcc00);
+  transform: scale(1.05);
+}
