@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jamibd25.github.io/Parabar.ctg.bd/sitemap.xml
