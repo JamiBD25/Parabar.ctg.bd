@@ -6,52 +6,16 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active'); // হ্যামবার্গার X এনিমেশন
 });
 
+document.querySelectorAll(".lyrics-btn")
+.forEach(button=>{
 
-fetch('lyrics.json')
-  .then(response => response.json())
-  .then(data => {
+    button.addEventListener("click",()=>{
 
-    const songList = document.getElementById('song-list');
+        const item =
+        button.parentElement;
 
-    function displaySongs(songs) {
-      songList.innerHTML = '';
+        item.classList.toggle("active");
 
-      songs.forEach(song => {
-        songList.innerHTML += `
-          <div class="song-card">
-            <h3>${song.title}</h3>
-            <p>${song.artist}</p>
-            <button onclick="showLyrics(${song.id})">
-              সম্পূর্ণ লিরিক দেখুন
-            </button>
-          </div>
-        `;
-      });
-    }
+    });
 
-    displaySongs(data);
-
-    document.getElementById('search')
-      .addEventListener('input', function() {
-
-        const keyword = this.value.toLowerCase();
-
-        const filtered = data.filter(song =>
-          song.title.toLowerCase().includes(keyword)
-        );
-
-        displaySongs(filtered);
-      });
-
-    window.showLyrics = function(id) {
-
-      const song = data.find(item => item.id === id);
-
-      alert(
-        song.title +
-        "\n\n" +
-        song.lyrics
-      );
-    };
-
-  });
+});
