@@ -528,137 +528,137 @@ footer {
   background: linear-gradient(45deg, #ff8800, #ffcc00);
   transform: scale(1.05);
 }
-/* lyrics */
 
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+/* ===============================
+   PARABAR LYRICS
+================================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Hind Siliguri',sans-serif;
+.lyrics-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'SolaimanLipi', sans-serif;
 }
 
-body{
-    background:#0f172a;
-    color:#f8fafc;
-    min-height:100vh;
-    padding:20px;
+.lyrics-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 20px;
 }
 
-/* Header */
-header{
-    text-align:center;
-    margin-bottom:25px;
+.lyrics-search {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 25px;
 }
 
-header h1{
-    font-size:2rem;
-    margin-bottom:15px;
+.song-list {
+    display: grid;
+    gap: 15px;
 }
 
-#search{
-    width:100%;
-    max-width:500px;
-    padding:12px 16px;
-    border:none;
-    border-radius:12px;
-    outline:none;
-    font-size:1rem;
-    background:#1e293b;
-    color:white;
+.song-card {
+    background: #fff;
+    border-left: 6px solid #ff8800;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+    transition: .3s;
 }
 
-/* Song List */
-#song-list{
-    display:grid;
-    gap:15px;
-    max-width:900px;
-    margin:auto;
+.song-card:hover {
+    transform: translateY(-3px);
 }
 
-/* Song Card */
-.song-card{
-    background:#1e293b;
-    border:1px solid #334155;
-    border-radius:16px;
-    padding:18px;
-    transition:0.3s;
+.song-card h3 {
+    margin: 0 0 8px;
+    color: #003366;
+    font-size: 22px;
 }
 
-.song-card:hover{
-    transform:translateY(-3px);
+.song-card .artist {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
-.song-card h3{
-    font-size:1.2rem;
-    margin-bottom:6px;
+.song-card .preview {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-.song-card p{
-    color:#cbd5e1;
-    margin-bottom:12px;
+.song-card .view-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: linear-gradient(45deg,#ffcc00,#ff8800);
+    color: #222;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
 }
 
-/* Button */
-.song-card button{
-    background:#22c55e;
-    color:white;
-    border:none;
-    padding:10px 16px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:600;
-    transition:0.3s;
+.song-card .view-btn:hover {
+    opacity: .9;
 }
 
-.song-card button:hover{
-    opacity:.9;
+/* Lyrics Details Page */
+
+.lyrics-page {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
 }
 
-/* Lyrics Page */
-.lyrics-container{
-    max-width:800px;
-    margin:auto;
-    background:#1e293b;
-    padding:25px;
-    border-radius:16px;
-    border:1px solid #334155;
+.lyrics-page h1 {
+    color: #003366;
+    margin-bottom: 10px;
 }
 
-.lyrics-title{
-    font-size:2rem;
-    margin-bottom:10px;
+.lyrics-page .artist {
+    color: #666;
+    margin-bottom: 20px;
 }
 
-.artist{
-    color:#94a3b8;
-    margin-bottom:20px;
+.lyrics-content {
+    white-space: pre-line;
+    line-height: 2;
+    font-size: 18px;
+    color: #222;
 }
 
-.lyrics{
-    white-space:pre-line;
-    line-height:1.9;
-    font-size:1.05rem;
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: #003366;
+    color: #fff;
+    border-radius: 8px;
 }
 
 /* Mobile */
+
 @media(max-width:768px){
 
-    body{
-        padding:15px;
-    }
-
-    header h1{
-        font-size:1.7rem;
-    }
-
-    .song-card{
-        padding:15px;
-    }
-
     .lyrics-title{
-        font-size:1.6rem;
+        font-size:24px;
     }
+
+    .song-card h3{
+        font-size:18px;
+    }
+
+    .lyrics-content{
+        font-size:16px;
+    }
+
 }
