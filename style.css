@@ -540,7 +540,7 @@ footer {
 .lyrics-btn{
     width:100%;
     border:none;
-    background:linear-gradient(90deg,#ffcc00,#ff8800);
+    font-family: "SolaimanLipi", sans-serif; /* সব জায়গায় সুতন্বি ফন্ট */ background:linear-gradient(90deg,#ffcc00,#ff8800);
     color:#222;
     padding:15px 20px;
 
